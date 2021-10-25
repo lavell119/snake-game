@@ -11,18 +11,41 @@
 		.controls {
 
 			display: none;
-			display: flex;
 			justify-content: space-evenly;
-			width: 100vw;
-			height: 50px;
-			
+			width: 50vw;
+			height: 150px;
+			background: hsl(200, 100%, 50%);
+			position: relative;
+			top: 10px;
 		
 
 		}
 
-		@media (max-width: 800px) {
+		@media (max-width: 500px) {
 			.controls {
-				display: flex;
+				display: grid;
+				align-items: center;
+				justify-items: center;
+				grid-template-areas: "blank1 up blank2"
+									"left blank3 right"
+									"blank4 down blank5";
+
+			}
+
+			#up-btn {
+				grid-area: up;
+			}
+
+			#down-btn {
+				grid-area: down;
+			}
+
+			#left-btn {
+				grid-area: left;
+			}
+
+			#right-btn {
+				grid-area: right;
 			}
 
 			.gameBoard {
@@ -42,6 +65,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			background: hsl(50, 100%, 50%);
 		}
 
 
@@ -82,10 +106,10 @@
 <body>
 	<div id="game-board"></div>
 	<div class="controls">
-	<button id="up-btn"class ="c-btn">UP</button>
-	<button id="down-btn"class ="c-btn">DOWN</button>
-	<button id="left-btn"class ="c-btn">LEFT</button>
-	<button id="right-btn" class ="c-btn">RIGHT</button>
-	</div>
+		<button id="up-btn"class ="c-btn">UP</button>
+		<button id="down-btn"class ="c-btn">DOWN</button>
+		<button id="left-btn"class ="c-btn">LEFT</button>
+		<button id="right-btn" class ="c-btn">RIGHT</button>
+		</div>
 </body>
 </html>
